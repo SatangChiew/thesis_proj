@@ -22,3 +22,19 @@ Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+## Feature Extraction
+
+feature_extraction.ipynb performs calculating the 8 features, along with per-class normalization and split the dataset into train/test/validation. The user can define the detection time and window size as neccesary.
+list of features:
+- Read Throughput
+- Write Throughput
+- Read Variance-like Logical Block Address
+- Write Variance-like Logical Block Address
+- Average Entropy
+- Entropy variance
+- Read Spatial Locality Ratio
+- Write Spatial Locality Ratio
+## Model training
+
+The main contribution for this research is multi-stream CNN that each stream take 1D input as a teacher model, follow throug knowledge distillation into lightweight student model suitable for constrained-environment. For ablation study, we also perform using 5 original features dereived from the RanSAP's author. In addition, we also conduct experiment by performing cross-architecture on the teacher model; consist of transformer, AutoEncode, DNN, and MLP-mixer. The pre-trained model is also given.
